@@ -53,6 +53,10 @@ log = logging.getLogger("server")
 
 BUSY = "The analyst is busy right now. Try again in a minute."
 UNAVAILABLE = "The analyst is unavailable right now. We have been notified."
+TIMED_OUT = "This question took longer than {minutes} minutes, so it was stopped. Ask again or try a narrower question."
+QUESTION_TIMEOUT = 300
+QUOTA_WORDS = ("RESOURCE_EXHAUSTED", "429", "402", "DEADLINE_EXCEEDED", "timed out", "Timeout")
+ASK_LOCK = threading.Lock()
 RESTARTED = "Your workspace restarted. Ask your question again."
 NO_RESTART = "Your workspace stopped and could not restart. Please sign in again."
 NO_START = "We could not start your workspace. Try again in a minute."
@@ -87,8 +91,8 @@ class Session:
     data: dict = field(default_factory=dict)
     messages: list = field(default_factory=list)
     last_used: float = field(default_factory=time.time)
-    lock: threading.Lock = field(default_factory=threading.Lock)
-    stop: threading.Event = field(default_factory=threading.Event)
+    stop: threading.Event = field(default_factory=lambda: idle())
+    cancel: object = None
     importing: bool = False
 
 
@@ -108,7 +112,15 @@ def memory_index():
     return _index
 
 
+def idle() -> threading.Event:
+    done = threading.Event()
+    done.set()
+    return done
+
+
 def friendly(exc: Exception) -> str | None:
+    if isinstance(exc, (GoogleGenerativeAIError, APIStatusError)) and any(w in str(exc) for w in QUOTA_WORDS):
+        return BUSY
     if isinstance(exc, (GoogleRateLimitError, GoogleAPIError, SandboxRateLimit, ServiceBusyException, RateLimitError,
                         APIConnectionError, APITimeoutError, InternalServerError)):
         return BUSY
@@ -471,10 +483,32 @@ def ask_route(body: Question, cur=Depends(current)):
         question += f" The {len(images)} attached image(s) show exactly what they circled, in order.]" if images else "]"
     if context:
         question += f"\n{context}"
-    if not s.lock.acquire(blocking=False):
-        raise HTTPException(409, "Still working on your previous question")
     events = queue.Queue()
-    s.stop.clear()
+    with ASK_LOCK:
+        if not s.stop.is_set():
+            raise HTTPException(409, "Still working on your previous question")
+        stop = s.stop = threading.Event()
+    finished = threading.Event()
+
+    def end(event: dict, keep=None) -> bool:
+        with ASK_LOCK:
+            if finished.is_set():
+                return False
+            if keep is not None and stop.is_set():
+                event, keep = {"type": "stopped"}, None
+            if keep is not None:
+                s.messages = keep
+            finished.set()
+            stop.set()
+        timer.cancel()
+        events.put(event)
+        events.put(None)
+        return True
+
+    s.cancel = end
+    timer = threading.Timer(QUESTION_TIMEOUT, end, args=[{"type": "error", "retry": True,
+                                                          "message": TIMED_OUT.format(minutes=QUESTION_TIMEOUT // 60)}])
+    timer.daemon = True
 
     def work():
         try:
@@ -488,23 +522,23 @@ def ask_route(body: Question, cur=Depends(current)):
                 events.put(event)
 
             with tracing.question(s.tenant.id, s.user, s.role, body.mode, question) as run:
-                s.messages, answer, calls = ask(s.agent, s.sandbox, s.memory, s.messages, question, on_step=step,
-                                                should_stop=s.stop.is_set, images=images, team=crew)
+                new, answer, calls = ask(s.agent, s.sandbox, s.memory, s.messages, question, on_step=step,
+                                         should_stop=stop.is_set, images=images, team=crew)
                 tracing.finish(run, answer, outputs, calls)
             s.last_used = time.time()
             new_charts = sorted(set(s.charts.glob("chart_*.png")) - before, key=lambda p: p.stat().st_mtime)
-            events.put({
+            end({
                 "type": "done",
                 "answer": answer or f"I hit the limit of {MAX_LLM_CALLS} steps without a final answer. Try a narrower question.",
                 "calls": calls,
                 "trace": str(run.id) if run else None,
                 "charts": ["data:image/png;base64," + base64.b64encode(p.read_bytes()).decode() for p in new_charts],
-            })
+            }, keep=new)
         except Stopped:
-            events.put({"type": "stopped"})
+            end({"type": "stopped"})
         except Exception as exc:
             message = friendly(exc)
-            if message is None and isinstance(exc, SandboxException):
+            if message is None and isinstance(exc, SandboxException) and not finished.is_set():
                 try:
                     restart_sandbox(s)
                     message = RESTARTED
@@ -514,14 +548,14 @@ def ask_route(body: Question, cur=Depends(current)):
             if message is None:
                 ref = secrets.token_hex(3)
                 log.error("unexpected error ref=%s ask tenant=%s", ref, s.tenant.id, exc_info=True)
-                events.put({"type": "error", "message": f"Something went wrong on our side. Reference: {ref}", "retry": False})
+                end({"type": "error", "message": f"Something went wrong on our side. Reference: {ref}", "retry": False})
             else:
                 log.warning("ask failed tenant=%s: %s", s.tenant.id, message, exc_info=True)
-                events.put({"type": "error", "message": message, "retry": True})
+                end({"type": "error", "message": message, "retry": True})
         finally:
-            s.lock.release()
-            events.put(None)
+            end({"type": "stopped"})
 
+    timer.start()
     threading.Thread(target=work, daemon=True).start()
 
     def stream():
@@ -533,7 +567,9 @@ def ask_route(body: Question, cur=Depends(current)):
 
 @app.post("/api/ask/stop")
 def stop_ask(cur=Depends(current)):
-    cur[1].stop.set()
+    s = cur[1]
+    if s.cancel:
+        s.cancel({"type": "stopped"})
     return {"ok": True}
 
 

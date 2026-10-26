@@ -32,6 +32,7 @@ MAX_LLM_CALLS = 10
 SANDBOX_IDLE = 900
 MAX_OUTPUT = 6000
 CODE_TIMEOUT = 120
+LLM_TIMEOUT = 60
 log = logging.getLogger("analyst")
 
 SYSTEM = """You are a senior data analyst for this company. You answer questions by writing Python and running it
@@ -91,9 +92,9 @@ def make_llm():
         from langchain_openai import ChatOpenAI
 
         return ChatOpenAI(model=os.getenv("DEEPSEEK_MODEL", DEEPSEEK_MODEL), api_key=os.getenv("DEEPSEEK_API_KEY"),
-                          base_url=DEEPSEEK_URL, timeout=120, max_retries=2,
+                          base_url=DEEPSEEK_URL, timeout=LLM_TIMEOUT, max_retries=1,
                           extra_body={"thinking": {"type": "disabled"}})
-    return ChatGoogleGenerativeAI(model=MODEL)
+    return ChatGoogleGenerativeAI(model=MODEL, timeout=LLM_TIMEOUT, max_retries=1)
 
 
 class State(MessagesState):

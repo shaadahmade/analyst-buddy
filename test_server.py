@@ -1,6 +1,8 @@
 import json
 import os
 import shutil
+import threading
+import time
 from types import SimpleNamespace
 
 from fastapi.testclient import TestClient
@@ -39,6 +41,9 @@ def fake_start(t, scope=None):
 def fake_ask(agent, sandbox, memory, messages, q, on_step=None, should_stop=None, images=None, team=None):
     fail["images"] = images
     fail["team"] = team
+    hang = fail.pop("hang", None)
+    if hang:
+        hang.wait(10)
     on_step({"type": "call", "id": "c1", "tool": "run_python", "args": {"code": "print(1)"}})
     on_step({"type": "output", "id": "c1", "output": "1"})
     if fail["exc"]:
@@ -170,6 +175,33 @@ try:
     assert client.post("/api/ask/stop", headers=ha).json() == {"ok": True}
     assert ask_events(ha)[-1]["type"] == "done", "a Stop pressed between questions must not stop the next one"
     assert client.post("/api/ask/stop").status_code == 401
+
+    hang = threading.Event()
+    fail["hang"] = hang
+    stuck = []
+    asker = threading.Thread(target=lambda: stuck.append(ask_events(ha)))
+    asker.start()
+    while server.SESSIONS[a["token"]].stop.is_set():
+        time.sleep(0.01)
+    t0 = time.time()
+    assert client.post("/api/ask/stop", headers=ha).json() == {"ok": True}
+    asker.join(5)
+    assert stuck and stuck[0][-1] == {"type": "stopped"} and time.time() - t0 < 2, "Stop ends a stalled question at once"
+    before = list(server.SESSIONS[a["token"]].messages)
+    assert ask_events(ha)[-1]["type"] == "done", "a new question is accepted while the stalled call is still hanging"
+    after = list(server.SESSIONS[a["token"]].messages)
+    hang.set()
+    time.sleep(0.3)
+    assert server.SESSIONS[a["token"]].messages == after and len(after) == len(before) + 1, "a late reply is thrown away"
+
+    server.QUESTION_TIMEOUT, saved_timeout = 0.3, server.QUESTION_TIMEOUT
+    fail["hang"] = threading.Event()
+    e = ask_events(ha)[-1]
+    assert e["type"] == "error" and e["message"].startswith("This question took longer") and e["retry"], e
+    server.QUESTION_TIMEOUT = saved_timeout
+    fail.pop("hang", None)
+    assert server.friendly(server.GoogleGenerativeAIError("402 RESOURCE_EXHAUSTED: prepayment credits are depleted")) == server.BUSY
+    assert server.friendly(server.GoogleGenerativeAIError("Request timed out")) == server.BUSY
 
     fb = {"question": "Why did revenue drop?", "answer": "Revenue fell 12%", "rating": "down", "note": "Ignore refunds"}
     r = client.post("/api/feedback", json=fb, headers=ha)

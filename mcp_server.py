@@ -223,21 +223,26 @@ def t_ask_analyst(caller, args):
     if not question or len(question) > srv.MAX_QUESTION:
         return error(f"Ask a question of 1-{srv.MAX_QUESTION} characters.")
     s = session_for(caller)
-    if not s.lock.acquire(blocking=False):
-        return error("Still working on your previous question.")
+    with srv.ASK_LOCK:
+        if not s.stop.is_set():
+            return error("Still working on your previous question.")
+        stop = s.stop = threading.Event()
     try:
         events = []
         crew = TeamContext(s.tenant, s.data, list(s.files), s.charts) if args.get("team", True) else None
         caller.tenant.audit(caller.user, "ask", question=question[:300], via="mcp")
-        s.messages, final, calls = ask(s.agent, s.sandbox, s.memory, s.messages, question, on_step=events.append,
-                                       should_stop=lambda: False, team=crew)
+        new, final, calls = ask(s.agent, s.sandbox, s.memory, s.messages, question, on_step=events.append,
+                                should_stop=stop.is_set, team=crew)
+        with srv.ASK_LOCK:
+            if not stop.is_set():
+                s.messages = new
         checks = [e["text"] for e in events if e.get("type") == "stage" and e.get("agent") == "Verifier" and e["text"][:1] in "✓✗"]
         return {"answer": final or "The analyst ran out of steps without a final answer. Ask a narrower question.",
                 "verified_checks": checks, "llm_calls": calls,
                 "code_runs": sum(1 for e in events if e.get("type") == "call")}
     finally:
         s.last_used = time.time()
-        s.lock.release()
+        stop.set()
 
 
 def t_list_reports(caller, args):
