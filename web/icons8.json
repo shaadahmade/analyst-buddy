@@ -1,0 +1,160 @@
+﻿{
+  "version": 2,
+  "icons": {
+    "pack": "fluent-systems-regular",
+    "sizes": [
+      16,
+      18,
+      20,
+      24,
+      28
+    ],
+    "color": "currentColor",
+    "format": "png-96 used as CSS mask (account has no SVG/MCP API access)",
+    "items": {
+      "logo": {
+        "id": "aNmG2K59DPKJ",
+        "commonName": "combo-chart"
+      },
+      "sparkle": {
+        "id": "YxCw7An8DYqf",
+        "commonName": "sparkling"
+      },
+      "company": {
+        "id": "lrrWa22VGVi6",
+        "commonName": "organization"
+      },
+      "lock": {
+        "id": "XkaSssewbJSt",
+        "commonName": "lock"
+      },
+      "code": {
+        "id": "sGQ4JZXIk7ES",
+        "commonName": "source-code"
+      },
+      "brain": {
+        "id": "48ZviuvM0OBW",
+        "commonName": "artificial-intelligence"
+      },
+      "goal": {
+        "id": "gJFEemCWRJY8",
+        "commonName": "goal"
+      },
+      "shield": {
+        "id": "bfwHrORtPSpB",
+        "commonName": "security-checked"
+      },
+      "file": {
+        "id": "FN71YxTPZVQC",
+        "commonName": "document"
+      },
+      "upload": {
+        "id": "tWt9XCfjK1WM",
+        "commonName": "upload"
+      },
+      "logout": {
+        "id": "voArpXRj4dc5",
+        "commonName": "logout-rounded"
+      },
+      "send": {
+        "id": "RHtRRB1E4DKI",
+        "commonName": "sent"
+      },
+      "user": {
+        "id": "zxB19VPoVLjK",
+        "commonName": "user"
+      },
+      "arrow": {
+        "id": "J1Ad3OTYKrUB",
+        "commonName": "long-arrow-right"
+      },
+      "thumb-up": {
+        "id": "FzjSymJYoHUF",
+        "commonName": "thumb-up"
+      },
+      "thumb-down": {
+        "id": "iBGaIpmQsdII",
+        "commonName": "thumbs-down"
+      },
+      "sun": {
+        "id": "JHsm5oZeWqae",
+        "commonName": "sun"
+      },
+      "moon": {
+        "id": "xlD3xOrQjTJO",
+        "commonName": "crescent-moon"
+      },
+      "copy": {
+        "id": "pNYOTp5DinZ3",
+        "commonName": "copy"
+      }
+    }
+  },
+  "sourceLogos": {
+    "pack": "color",
+    "why": "Data-source cards in the Add data panel show the apps' own colored logos; the binding UI pack (fluent-systems-regular) has no Shopify or Google Sheets. Used only there, at 34px, as <img> (not a mask).",
+    "sizes": [
+      34
+    ],
+    "dir": "public/icons/sources",
+    "items": {
+      "upload": {
+        "id": "12779",
+        "commonName": "upload"
+      },
+      "url": {
+        "id": "12312",
+        "commonName": "link"
+      },
+      "sheets": {
+        "id": "30461",
+        "commonName": "google-sheets"
+      },
+      "database": {
+        "id": "11973",
+        "commonName": "database"
+      },
+      "shopify": {
+        "id": "uSHYbs6PJfMT",
+        "commonName": "shopify"
+      },
+      "ga4": {
+        "id": "fcKpGwAbxxfP",
+        "commonName": "google-analytics"
+      },
+      "other": {
+        "id": "12930",
+        "commonName": "plugin"
+      },
+      "mcp": {
+        "id": "Sc18X4aWjq0C",
+        "commonName": "model-context-protocol"
+      }
+    }
+  },
+  "tokens": {
+    "iconColor": "--ink",
+    "accent": "--blue",
+    "radius": "--radius"
+  },
+  "aiLogos": {
+    "pack": "color",
+    "why": "Connect AI app cards show each AI app's own logo. Icons8's Color pack has ChatGPT and Gemini but no Claude logo, so Claude comes from the colour Fluent pack (Icons8 labels it Anthropic / claude). Used only on the Connect AI page as <img>, 26-48px.",
+    "dir": "public/icons/ai",
+    "items": {
+      "claude": {
+        "id": "H5H0mqCCr5AV",
+        "commonName": "claude",
+        "pack": "fluent"
+      },
+      "chatgpt": {
+        "id": "TUk7vxvtu6hX",
+        "commonName": "chatgpt"
+      },
+      "gemini": {
+        "id": "mrNoLXFmvXDX",
+        "commonName": "gemini-ai"
+      }
+    }
+  }
+}

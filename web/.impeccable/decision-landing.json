@@ -1,0 +1,131 @@
+{
+  "title": "Choose the visual world for Analyst Buddy",
+  "question": "The roll assigned The Monday Board. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Monday Board",
+      "kicker": "THE ROLL",
+      "lineage": "the office whiteboard where every weekly review happens",
+      "thesis": "Every week starts at the board: what the numbers did, why, and who acts.",
+      "palette": ["#F5F6F2", "#1B1E23", "#1F4FD8", "#D7262E", "#128A4B", "#FFC93C"],
+      "materials": ["dry-erase enamel with ghosted old marks", "brushed aluminium frame and marker tray", "magnets and pinned printouts"],
+      "viewport": "The hero is the board itself in its aluminium frame: this week's numbers in marker, and a magnet-pinned card holding the working request access form.",
+      "risk": "Tips into playful if the marker lettering gets cute; marker type is reserved for numbers and annotations, all copy stays in a sturdy grotesk.",
+      "raised": [
+        { "from": "challenger-provenance", "raise": "Every figure on the board carries a small source tag: rows read, code run." },
+        { "from": "challenger-ascii", "raise": "One strict grid: the board's ruled lines are the page's layout grid." },
+        { "from": "challenger-tropicalia", "raise": "Scale with intent: the one number that matters is written five times larger than the rest." },
+        { "from": "challenger-bazaar", "raise": "Insights ranked down one lane, most urgent first." },
+        { "from": "challenger-coffeehouse", "raise": "Copy in short blocks, two lines at most, like notes on a board." }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "The Markets Page",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "the business newspaper's markets and companies pages",
+      "thesis": "Your company reported like a market: today's movers, the numbers, the analyst's note.",
+      "palette": ["#FCEBDD", "#191512", "#7A1F3D", "#0D6E8A", "#2F8F5B"],
+      "materials": ["salmon newsprint", "dense market tables", "bold condensed headlines"],
+      "viewport": "A front page for one company: banner headline on this week's biggest mover, a movers table, and the request access form set as a subscription coupon.",
+      "risk": "Familiar: broadsheet editorial is where many runs in this category land, and it can read stiff to some owners."
+    },
+    {
+      "id": "challenger-vu",
+      "label": "VU Meter Bridge",
+      "verdict": "competitive",
+      "lineage": "the row of needles on a recording desk",
+      "thesis": "Every goal is a needle; you read the business by sweeping the row.",
+      "palette": ["#F2EBDA", "#141414", "#C8261E", "#5A3E2B", "#9AA0A6"],
+      "materials": ["ivory meter faces behind glass", "walnut and steel desk frame"],
+      "viewport": "A bridge of goal meters across the top, each needle settling on this week's value; red only past the target line.",
+      "case": "Fuses on clarity: goals as meters read instantly; loses on audience, owners do not live at a mixing desk.",
+      "risk": "Reads as a gadget if the needles move without a real number behind them.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-vu-meter-bridge-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-vu-meter-bridge.webp"
+    },
+    {
+      "id": "challenger-provenance",
+      "label": "Provenance Ribbon",
+      "verdict": "declined",
+      "lineage": "museum provenance records",
+      "thesis": "Follow one number's life from raw row to answer.",
+      "palette": ["#EADFC8", "#B3202A", "#8A8A8A"],
+      "materials": ["archival buff", "red silk ribbon"],
+      "viewport": "One ribbon column tracing a figure through the data.",
+      "case": "Fuses poorly: owners do not identify with museum archives.",
+      "risk": "Feels academic.",
+      "kept": "Every figure carries its source tag.",
+      "hero": "https://impeccable.style/worlds/cards/exhibition-museum-curation-provenance-ribbon-hero.webp"
+    },
+    {
+      "id": "challenger-ascii",
+      "label": "ASCII Live Scene",
+      "verdict": "declined",
+      "lineage": "typewriter glyph renders",
+      "thesis": "The data drawn in characters.",
+      "palette": ["#0A0A0A", "#33FF66"],
+      "materials": ["phosphor glyphs", "monospace grid"],
+      "viewport": "A glyph-rendered chart filling the screen.",
+      "case": "Fuses poorly: reads as code, which scares non-technical owners.",
+      "risk": "Too techy.",
+      "kept": "One strict grid governs everything.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-ascii-live-scene-render-hero.webp"
+    },
+    {
+      "id": "challenger-tropicalia",
+      "label": "Tropicalia Sleeve",
+      "verdict": "declined",
+      "lineage": "Brazilian album collage sleeves",
+      "thesis": "The business as a pasted-up tableau.",
+      "palette": ["#1E8A3A", "#FFB000", "#E2412F"],
+      "materials": ["cut-out photos", "painted foliage"],
+      "viewport": "A collage of numbers at mismatched scales.",
+      "case": "Fuses poorly: too playful for numbers owners must trust.",
+      "risk": "Too playful.",
+      "kept": "Courage in scale contrast.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-tropicalia-sleeve-collage-hero.webp"
+    },
+    {
+      "id": "challenger-bazaar",
+      "label": "Moon-shadow Bazaar",
+      "verdict": "declined",
+      "lineage": "night market stalls",
+      "thesis": "Insights traded down a moonlit lane.",
+      "palette": ["#0E1730", "#C9962E", "#F4F1E8"],
+      "materials": ["stall canvas", "soft blacks"],
+      "viewport": "Stalls ranked down one lane.",
+      "case": "Fuses poorly: dreamlike, loses product clarity.",
+      "risk": "Too whimsical.",
+      "kept": "Ranked down one lane.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-moon-shadow-bazaar-hero.webp"
+    },
+    {
+      "id": "challenger-coffeehouse",
+      "label": "Village Coffeehouse Identity",
+      "verdict": "declined",
+      "lineage": "nineties earthy brand identities",
+      "thesis": "Warm, handmade, small-business honest.",
+      "palette": ["#C4622D", "#6B7A3A", "#D9A531", "#E9DCC2"],
+      "materials": ["recycled kraft", "woodcut marks"],
+      "viewport": "A torn-paper header with a stamped mark.",
+      "case": "Fuses poorly: dated, and soft where the voice must be expert.",
+      "risk": "Reads nostalgic.",
+      "kept": "Short warm copy blocks.",
+      "hero": "https://impeccable.style/worlds/cards/brand-identity-canon-village-coffeehouse-identity-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code" },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "What AI analytics startups ship, executed impeccably.",
+    "palette": ["#FFFFFF", "#0F172A", "#4F46E5"],
+    "materials": ["clean grid", "product screenshots"],
+    "viewport": "Headline and subcopy beside a dashboard screenshot, logo row, feature cards.",
+    "risk": "Indistinguishable from the competition by design."
+  },
+  "steer": true
+}

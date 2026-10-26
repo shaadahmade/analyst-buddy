@@ -1,0 +1,808 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T11:29:15+00:00",
+  "title": "Design System: Analyst Buddy",
+  "extensions": {
+    "colorMeta": {
+      "enamel": {
+        "role": "neutral",
+        "displayName": "Board Enamel",
+        "canonical": "oklch(99.3% 0.001 197.1)",
+        "tonalRamp": [
+          "oklch(15% 0.001 197.1)",
+          "oklch(26% 0.001 197.1)",
+          "oklch(37% 0.001 197.1)",
+          "oklch(49% 0.001 197.1)",
+          "oklch(60% 0.001 197.1)",
+          "oklch(72% 0.001 197.1)",
+          "oklch(83% 0.001 197.1)",
+          "oklch(95% 0.001 197.1)"
+        ],
+        "dark": "#1a1e22"
+      },
+      "enamel-shade": {
+        "role": "neutral",
+        "displayName": "Wall Grey",
+        "canonical": "oklch(92.9% 0.006 239.8)",
+        "tonalRamp": [
+          "oklch(15% 0.006 239.8)",
+          "oklch(26% 0.006 239.8)",
+          "oklch(37% 0.006 239.8)",
+          "oklch(49% 0.006 239.8)",
+          "oklch(60% 0.006 239.8)",
+          "oklch(72% 0.006 239.8)",
+          "oklch(83% 0.006 239.8)",
+          "oklch(95% 0.006 239.8)"
+        ],
+        "dark": "#121518"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "oklch(99.4% 0.001 106.4)",
+        "tonalRamp": [
+          "oklch(15% 0.001 106.4)",
+          "oklch(26% 0.001 106.4)",
+          "oklch(37% 0.001 106.4)",
+          "oklch(49% 0.001 106.4)",
+          "oklch(60% 0.001 106.4)",
+          "oklch(72% 0.001 106.4)",
+          "oklch(83% 0.001 106.4)",
+          "oklch(95% 0.001 106.4)"
+        ],
+        "dark": "#232830"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Marker Black",
+        "canonical": "oklch(23.4% 0.011 260.7)",
+        "tonalRamp": [
+          "oklch(15% 0.011 260.7)",
+          "oklch(26% 0.011 260.7)",
+          "oklch(37% 0.011 260.7)",
+          "oklch(49% 0.011 260.7)",
+          "oklch(60% 0.011 260.7)",
+          "oklch(72% 0.011 260.7)",
+          "oklch(83% 0.011 260.7)",
+          "oklch(95% 0.011 260.7)"
+        ],
+        "dark": "#e9ecef"
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "oklch(41.9% 0.018 260.7)",
+        "tonalRamp": [
+          "oklch(15% 0.018 260.7)",
+          "oklch(26% 0.018 260.7)",
+          "oklch(37% 0.018 260.7)",
+          "oklch(49% 0.018 260.7)",
+          "oklch(60% 0.018 260.7)",
+          "oklch(72% 0.018 260.7)",
+          "oklch(83% 0.018 260.7)",
+          "oklch(95% 0.018 260.7)"
+        ],
+        "dark": "#b7bdc5"
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ghost Ink",
+        "canonical": "oklch(52.3% 0.017 260.7)",
+        "tonalRamp": [
+          "oklch(15% 0.017 260.7)",
+          "oklch(26% 0.017 260.7)",
+          "oklch(37% 0.017 260.7)",
+          "oklch(49% 0.017 260.7)",
+          "oklch(60% 0.017 260.7)",
+          "oklch(72% 0.017 260.7)",
+          "oklch(83% 0.017 260.7)",
+          "oklch(95% 0.017 260.7)"
+        ],
+        "dark": "#959ca6"
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Marker Blue",
+        "canonical": "oklch(49.1% 0.216 264.5)",
+        "tonalRamp": [
+          "oklch(15% 0.216 264.5)",
+          "oklch(26% 0.216 264.5)",
+          "oklch(37% 0.216 264.5)",
+          "oklch(49% 0.216 264.5)",
+          "oklch(60% 0.216 264.5)",
+          "oklch(72% 0.216 264.5)",
+          "oklch(83% 0.216 264.5)",
+          "oklch(95% 0.216 264.5)"
+        ],
+        "dark": "#8aa8ff"
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Action Marker Blue",
+        "canonical": "oklch(49.1% 0.216 264.5)",
+        "tonalRamp": [
+          "oklch(15% 0.216 264.5)",
+          "oklch(26% 0.216 264.5)",
+          "oklch(37% 0.216 264.5)",
+          "oklch(49% 0.216 264.5)",
+          "oklch(60% 0.216 264.5)",
+          "oklch(72% 0.216 264.5)",
+          "oklch(83% 0.216 264.5)",
+          "oklch(95% 0.216 264.5)"
+        ],
+        "dark": "#8aa8ff"
+      },
+      "action-hover": {
+        "role": "primary",
+        "displayName": "Action Hover",
+        "canonical": "oklch(41.1% 0.178 264.6)",
+        "tonalRamp": [
+          "oklch(15% 0.178 264.6)",
+          "oklch(26% 0.178 264.6)",
+          "oklch(37% 0.178 264.6)",
+          "oklch(49% 0.178 264.6)",
+          "oklch(60% 0.178 264.6)",
+          "oklch(72% 0.178 264.6)",
+          "oklch(83% 0.178 264.6)",
+          "oklch(95% 0.178 264.6)"
+        ],
+        "dark": "#a9c0ff"
+      },
+      "on-action": {
+        "role": "primary",
+        "displayName": "On Action",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(49% 0 0)",
+          "oklch(60% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(83% 0 0)",
+          "oklch(95% 0 0)"
+        ],
+        "dark": "#0d1530"
+      },
+      "action-shadow": {
+        "role": "primary",
+        "displayName": "Action Shadow",
+        "canonical": "rgba(23, 61, 169, 0.65)",
+        "tonalRamp": [
+          "rgba(23, 61, 169, 0.10)",
+          "rgba(23, 61, 169, 0.20)",
+          "rgba(23, 61, 169, 0.30)",
+          "rgba(23, 61, 169, 0.40)",
+          "rgba(23, 61, 169, 0.50)",
+          "rgba(23, 61, 169, 0.65)",
+          "rgba(23, 61, 169, 0.75)",
+          "rgba(23, 61, 169, 0.85)"
+        ],
+        "dark": "rgba(0, 0, 0, 0.6)"
+      },
+      "red": {
+        "role": "secondary",
+        "displayName": "Miss Marker Red",
+        "canonical": "oklch(56.9% 0.210 25.4)",
+        "tonalRamp": [
+          "oklch(15% 0.210 25.4)",
+          "oklch(26% 0.210 25.4)",
+          "oklch(37% 0.210 25.4)",
+          "oklch(49% 0.210 25.4)",
+          "oklch(60% 0.210 25.4)",
+          "oklch(72% 0.210 25.4)",
+          "oklch(83% 0.210 25.4)",
+          "oklch(95% 0.210 25.4)"
+        ],
+        "dark": "#ff6b6f"
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Hit Marker Green",
+        "canonical": "oklch(55.8% 0.138 153.2)",
+        "tonalRamp": [
+          "oklch(15% 0.138 153.2)",
+          "oklch(26% 0.138 153.2)",
+          "oklch(37% 0.138 153.2)",
+          "oklch(49% 0.138 153.2)",
+          "oklch(60% 0.138 153.2)",
+          "oklch(72% 0.138 153.2)",
+          "oklch(83% 0.138 153.2)",
+          "oklch(95% 0.138 153.2)"
+        ],
+        "dark": "#3ecf85"
+      },
+      "green-text": {
+        "role": "secondary",
+        "displayName": "Hit Green Text",
+        "canonical": "oklch(47.4% 0.117 153.4)",
+        "tonalRamp": [
+          "oklch(15% 0.117 153.4)",
+          "oklch(26% 0.117 153.4)",
+          "oklch(37% 0.117 153.4)",
+          "oklch(49% 0.117 153.4)",
+          "oklch(60% 0.117 153.4)",
+          "oklch(72% 0.117 153.4)",
+          "oklch(83% 0.117 153.4)",
+          "oklch(95% 0.117 153.4)"
+        ],
+        "dark": "#5fd99a"
+      },
+      "magnet": {
+        "role": "tertiary",
+        "displayName": "Magnet Yellow",
+        "canonical": "oklch(86.1% 0.159 86.4)",
+        "tonalRamp": [
+          "oklch(15% 0.159 86.4)",
+          "oklch(26% 0.159 86.4)",
+          "oklch(37% 0.159 86.4)",
+          "oklch(49% 0.159 86.4)",
+          "oklch(60% 0.159 86.4)",
+          "oklch(72% 0.159 86.4)",
+          "oklch(83% 0.159 86.4)",
+          "oklch(95% 0.159 86.4)"
+        ],
+        "dark": "#ffc93c"
+      },
+      "magnet-hover": {
+        "role": "tertiary",
+        "displayName": "Magnet Hover",
+        "canonical": "oklch(96.7% 0.047 92.6)",
+        "tonalRamp": [
+          "oklch(15% 0.047 92.6)",
+          "oklch(26% 0.047 92.6)",
+          "oklch(37% 0.047 92.6)",
+          "oklch(49% 0.047 92.6)",
+          "oklch(60% 0.047 92.6)",
+          "oklch(72% 0.047 92.6)",
+          "oklch(83% 0.047 92.6)",
+          "oklch(95% 0.047 92.6)"
+        ],
+        "dark": "#3a3320"
+      },
+      "on-magnet": {
+        "role": "tertiary",
+        "displayName": "On Magnet",
+        "canonical": "oklch(23.4% 0.011 260.7)",
+        "tonalRamp": [
+          "oklch(15% 0.011 260.7)",
+          "oklch(26% 0.011 260.7)",
+          "oklch(37% 0.011 260.7)",
+          "oklch(49% 0.011 260.7)",
+          "oklch(60% 0.011 260.7)",
+          "oklch(72% 0.011 260.7)",
+          "oklch(83% 0.011 260.7)",
+          "oklch(95% 0.011 260.7)"
+        ],
+        "dark": "#1b1e23"
+      },
+      "alu-hi": {
+        "role": "neutral",
+        "displayName": "Frame Light",
+        "canonical": "oklch(95.4% 0.003 247.9)",
+        "tonalRamp": [
+          "oklch(15% 0.003 247.9)",
+          "oklch(26% 0.003 247.9)",
+          "oklch(37% 0.003 247.9)",
+          "oklch(49% 0.003 247.9)",
+          "oklch(60% 0.003 247.9)",
+          "oklch(72% 0.003 247.9)",
+          "oklch(83% 0.003 247.9)",
+          "oklch(95% 0.003 247.9)"
+        ],
+        "dark": "#1f2429"
+      },
+      "alu": {
+        "role": "neutral",
+        "displayName": "Frame",
+        "canonical": "oklch(84.9% 0.009 247.9)",
+        "tonalRamp": [
+          "oklch(15% 0.009 247.9)",
+          "oklch(26% 0.009 247.9)",
+          "oklch(37% 0.009 247.9)",
+          "oklch(49% 0.009 247.9)",
+          "oklch(60% 0.009 247.9)",
+          "oklch(72% 0.009 247.9)",
+          "oklch(83% 0.009 247.9)",
+          "oklch(95% 0.009 247.9)"
+        ],
+        "dark": "#2c3238"
+      },
+      "alu-lo": {
+        "role": "neutral",
+        "displayName": "Frame Shadow",
+        "canonical": "oklch(70.6% 0.013 248.0)",
+        "tonalRamp": [
+          "oklch(15% 0.013 248.0)",
+          "oklch(26% 0.013 248.0)",
+          "oklch(37% 0.013 248.0)",
+          "oklch(49% 0.013 248.0)",
+          "oklch(60% 0.013 248.0)",
+          "oklch(72% 0.013 248.0)",
+          "oklch(83% 0.013 248.0)",
+          "oklch(95% 0.013 248.0)"
+        ],
+        "dark": "#3d444c"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Ruled Line",
+        "canonical": "rgba(31, 79, 216, 0.07)",
+        "tonalRamp": [
+          "rgba(31, 79, 216, 0.03)",
+          "rgba(31, 79, 216, 0.05)",
+          "rgba(31, 79, 216, 0.07)",
+          "rgba(31, 79, 216, 0.10)",
+          "rgba(31, 79, 216, 0.14)",
+          "rgba(31, 79, 216, 0.20)",
+          "rgba(31, 79, 216, 0.30)",
+          "rgba(31, 79, 216, 0.45)"
+        ],
+        "dark": "rgba(138, 168, 255, 0.06)"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Field Line",
+        "canonical": "oklch(86.5% 0.008 253.9)",
+        "tonalRamp": [
+          "oklch(15% 0.008 253.9)",
+          "oklch(26% 0.008 253.9)",
+          "oklch(37% 0.008 253.9)",
+          "oklch(49% 0.008 253.9)",
+          "oklch(60% 0.008 253.9)",
+          "oklch(72% 0.008 253.9)",
+          "oklch(83% 0.008 253.9)",
+          "oklch(95% 0.008 253.9)"
+        ],
+        "dark": "#3d444c"
+      },
+      "line-soft": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(90.6% 0.006 255.5)",
+        "tonalRamp": [
+          "oklch(15% 0.006 255.5)",
+          "oklch(26% 0.006 255.5)",
+          "oklch(37% 0.006 255.5)",
+          "oklch(49% 0.006 255.5)",
+          "oklch(60% 0.006 255.5)",
+          "oklch(72% 0.006 255.5)",
+          "oklch(83% 0.006 255.5)",
+          "oklch(95% 0.006 255.5)"
+        ],
+        "dark": "#333a41"
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Ink Wash",
+        "canonical": "rgba(27, 30, 35, 0.06)",
+        "tonalRamp": [
+          "rgba(27, 30, 35, 0.03)",
+          "rgba(27, 30, 35, 0.04)",
+          "rgba(27, 30, 35, 0.06)",
+          "rgba(27, 30, 35, 0.08)",
+          "rgba(27, 30, 35, 0.10)",
+          "rgba(27, 30, 35, 0.14)",
+          "rgba(27, 30, 35, 0.20)",
+          "rgba(27, 30, 35, 0.30)"
+        ],
+        "dark": "rgba(255, 255, 255, 0.07)"
+      },
+      "q-bg": {
+        "role": "neutral",
+        "displayName": "Question Tint",
+        "canonical": "oklch(94.9% 0.020 270.2)",
+        "tonalRamp": [
+          "oklch(15% 0.020 270.2)",
+          "oklch(26% 0.020 270.2)",
+          "oklch(37% 0.020 270.2)",
+          "oklch(49% 0.020 270.2)",
+          "oklch(60% 0.020 270.2)",
+          "oklch(72% 0.020 270.2)",
+          "oklch(83% 0.020 270.2)",
+          "oklch(95% 0.020 270.2)"
+        ],
+        "dark": "#1f2a4a"
+      },
+      "q-ink": {
+        "role": "neutral",
+        "displayName": "Question Ink",
+        "canonical": "oklch(41.1% 0.178 264.6)",
+        "tonalRamp": [
+          "oklch(15% 0.178 264.6)",
+          "oklch(26% 0.178 264.6)",
+          "oklch(37% 0.178 264.6)",
+          "oklch(49% 0.178 264.6)",
+          "oklch(60% 0.178 264.6)",
+          "oklch(72% 0.178 264.6)",
+          "oklch(83% 0.178 264.6)",
+          "oklch(95% 0.178 264.6)"
+        ],
+        "dark": "#cdd9ff"
+      },
+      "chart-mat": {
+        "role": "neutral",
+        "displayName": "Chart Mat",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(49% 0 0)",
+          "oklch(60% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(83% 0 0)",
+          "oklch(95% 0 0)"
+        ],
+        "dark": "#ffffff"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (marker)",
+        "purpose": "The single hero figure only, colored by meaning and circled."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page h1 on the landing hero."
+      },
+      "headline-signin": {
+        "displayName": "Headline (sign in)",
+        "purpose": "Sign-in board h1, max 14ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Landing section h2."
+      },
+      "title-closing": {
+        "displayName": "Title (closing)",
+        "purpose": "Closing board h2, slightly larger than section titles."
+      },
+      "card-title": {
+        "displayName": "Card Title",
+        "purpose": "Titles on magnet cards."
+      },
+      "step-title": {
+        "displayName": "Step Title",
+        "purpose": "The three flow step headings."
+      },
+      "small-title": {
+        "displayName": "Small Title",
+        "purpose": "Rail company name (width 108%) and headings inside answers."
+      },
+      "starter-title": {
+        "displayName": "Starter Title",
+        "purpose": "Title line on a starter card."
+      },
+      "rail-heading": {
+        "displayName": "Rail Heading",
+        "purpose": "Goals and Data headings in the rail."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Paragraph under a headline, faded ink, max 46ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Answers, steps, trust copy; tabular numerals."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels and buttons."
+      },
+      "chip": {
+        "displayName": "Chip",
+        "purpose": "Week toggle and workspace status line."
+      },
+      "source": {
+        "displayName": "Source",
+        "purpose": "Provenance tags under figures and answers; composer hint."
+      },
+      "annotation": {
+        "displayName": "Annotation (marker)",
+        "purpose": "Handwritten notes only; never numerals in lists."
+      }
+    },
+    "shadows": [
+      {
+        "name": "pinned-paper",
+        "token": "--shadow-card",
+        "value": "0 2px 3px rgba(27, 30, 35, 0.08), 0 14px 28px -12px rgba(27, 30, 35, 0.28)",
+        "dark": "0 2px 3px rgba(0, 0, 0, 0.35), 0 14px 28px -12px rgba(0, 0, 0, 0.75)",
+        "purpose": "Cards, printouts, answers, starters, rail company panel, trust tiles."
+      },
+      {
+        "name": "hung-frame",
+        "token": "--shadow-frame",
+        "value": "0 3px 6px rgba(27, 30, 35, 0.12), 0 30px 60px -28px rgba(27, 30, 35, 0.45)",
+        "dark": "0 3px 6px rgba(0, 0, 0, 0.4), 0 30px 60px -28px rgba(0, 0, 0, 0.8)",
+        "purpose": "The frame around every board."
+      },
+      {
+        "name": "magnet",
+        "token": "--shadow-magnet",
+        "value": "0 3px 5px -1px rgba(27, 30, 35, 0.4)",
+        "dark": "0 3px 5px -1px rgba(0, 0, 0, 0.7)",
+        "purpose": "Yellow magnet discs."
+      },
+      {
+        "name": "action-lift",
+        "value": "0 6px 14px -6px var(--action-shadow)",
+        "purpose": "Primary action button at rest."
+      },
+      {
+        "name": "action-lift-hover",
+        "value": "0 10px 20px -8px var(--action-shadow)",
+        "purpose": "Primary action button on hover."
+      },
+      {
+        "name": "action-lift-active",
+        "value": "0 2px 6px -2px var(--action-shadow)",
+        "purpose": "Primary action button pressed."
+      },
+      {
+        "name": "tray-drop",
+        "value": "0 6px 10px -6px rgba(0, 0, 0, 0.5)",
+        "purpose": "Marker tray under the board; literal, same in both themes."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-press",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Buttons (0.18s) and starter cards (0.2s)."
+      },
+      {
+        "name": "write-on",
+        "value": "0.6s cubic-bezier(0.25, 0.8, 0.25, 1), stagger 140ms",
+        "purpose": "Figures and notes write on left to right via clip-path."
+      },
+      {
+        "name": "draw-circle",
+        "value": "0.9s cubic-bezier(0.3, 0.7, 0.2, 1), delay 0.55s",
+        "purpose": "Hand-drawn circle around the hero figure."
+      },
+      {
+        "name": "erase",
+        "value": "0.42s ease-in",
+        "purpose": "Board wipe (fade, 6px blur, 14px slide) before rewriting a new week."
+      },
+      {
+        "name": "scribble",
+        "value": "1.4s ease-in-out infinite",
+        "purpose": "Working indicator while the analyst runs code."
+      },
+      {
+        "name": "field-focus",
+        "value": "0.15s",
+        "purpose": "Input border and background change."
+      },
+      {
+        "name": "control-color",
+        "value": "0.15s",
+        "purpose": "Icon buttons, theme toggle border, field border and background."
+      },
+      {
+        "name": "disclosure",
+        "value": "0.2s",
+        "purpose": "Company panel chevron turning on open."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "collapse",
+        "value": "980px"
+      },
+      {
+        "name": "mobile",
+        "value": "640px"
+      }
+    ],
+    "openItems": [
+      {
+        "name": "The Aluminium Promise",
+        "status": "open by user decision",
+        "body": "Frame, tray and magnets ship as flat neutral and flat yellow fills. Photo-quality raster assets for frame, tray and magnets to be added in a later session. CSS imitation of metal (multi-stop gradients, radial highlights) is rejected. Finish review: 7 of 8 resolved, this is the open one. The raster assets will need an after-hours variant (or a dimming treatment) for the dark theme."
+      }
+    ],
+    "themes": {
+      "default": "system (prefers-color-scheme)",
+      "override": "data-theme=\"light\" | \"dark\" on <html>, set by the theme toggle",
+      "storageKey": "analyst-theme",
+      "appliedBy": "inline script in index.html before first paint",
+      "darkSelectors": [
+        "@media (prefers-color-scheme: dark) { :root:not([data-theme=\"light\"]) }",
+        ":root[data-theme=\"dark\"]"
+      ],
+      "themeColor": {
+        "light": "#e4e8eb",
+        "dark": "#121518"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-blue",
+      "description": "The one action on a card: request access, sign in, ask, save feedback. Blue with white text by day, light blue with dark text after hours.",
+      "html": "<button class=\"ds-btn-blue\">Request access <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M3 12h17M14 6l6 6-6 6\"/></svg></button>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-btn-blue{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-family:var(--font);font-weight:700;font-stretch:105%;border:2px solid transparent;cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),background .18s,box-shadow .18s;background:var(--action);color:var(--on-action);box-shadow:0 6px 14px -6px var(--action-shadow)} .ds-btn-blue:hover{background:var(--action-hover);transform:translateY(-1px);box-shadow:0 10px 20px -8px var(--action-shadow)} .ds-btn-blue:active{transform:translateY(1px);box-shadow:0 2px 6px -2px var(--action-shadow)} .ds-btn-blue:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions such as Sign in, Upload data and Try again; inverts to ink on hover.",
+      "html": "<button class=\"ds-btn-outline\">Sign in</button>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-btn-outline{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-family:var(--font);font-weight:700;font-stretch:105%;border:2px solid transparent;cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),background .18s,box-shadow .18s;background:var(--paper);border-color:var(--ink);color:var(--ink)} .ds-btn-outline:hover{background:var(--ink);color:var(--paper)} .ds-btn-outline:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Quiet actions such as Sign out and Cancel.",
+      "html": "<button class=\"ds-btn-ghost\">Sign out</button>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-family:var(--font);font-weight:700;font-stretch:105%;border:2px solid transparent;cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),background .18s,box-shadow .18s;background:transparent;color:var(--ink-2)} .ds-btn-ghost:hover{color:var(--ink);background:var(--wash)} .ds-btn-ghost:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Labelled text input: enamel well that turns paper with a blue border on focus.",
+      "html": "<label class=\"ds-field\"><span>Work email</span><input type=\"email\" placeholder=\"you@yourcompany.com\"></label>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-field{display:grid;gap:6px;font-family:var(--font);font-weight:700;font-size:.9rem;color:var(--ink)} .ds-field input{font:inherit;font-weight:500;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--enamel);color:var(--ink);transition:border-color .15s,background .15s} .ds-field input::placeholder{color:var(--ink-3)} .ds-field input:focus{outline:none;border-color:var(--blue);background:var(--paper)}"
+    },
+    {
+      "name": "Magnet Toggle",
+      "kind": "chip",
+      "refersTo": "magnet-toggle",
+      "description": "Pill toggle; the active option is a yellow magnet.",
+      "html": "<div class=\"ds-toggle\"><button class=\"ds-magnet-btn\">Week 41</button><button class=\"ds-magnet-btn on\" aria-pressed=\"true\">Week 42</button></div>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-toggle{display:inline-flex;gap:6px} .ds-magnet-btn{font-family:var(--font);padding:5px 12px;border-radius:999px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font-weight:700;font-size:.85rem;cursor:pointer} .ds-magnet-btn.on{background:var(--magnet);border-color:var(--magnet);color:var(--on-magnet)} .ds-magnet-btn:hover:not(.on){background:var(--magnet-hover)} .ds-magnet-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}"
+    },
+    {
+      "name": "Source Tag",
+      "kind": "chip",
+      "refersTo": "source-tag",
+      "description": "Provenance under every figure and answer: rows read, code run.",
+      "html": "<span class=\"ds-source\">11,238 rows read, 3 code runs</span>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-source{display:inline-block;padding:2px 8px;border-radius:6px;font-family:var(--font);font-size:.78rem;font-weight:600;font-stretch:90%;color:var(--ink-2);background:var(--wash)}"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Answer actions: copy, thumbs up, thumbs down. Faded ink at rest; pressed ratings colored by meaning.",
+      "html": "<div class=\"ds-actions\"><button class=\"ds-icon-btn\" aria-label=\"Copy answer\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8 8h11v12H8zM5 16V4h11\"/></svg><span>Copied</span></button><button class=\"ds-icon-btn on-up\" aria-label=\"Helpful\" aria-pressed=\"true\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 10v10H4V10zM7 10l4-7c1.5 0 2.5 1 2.2 2.6L12.5 9H19a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7\"/></svg></button><button class=\"ds-icon-btn\" aria-label=\"Not helpful\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 14V4H4v10zM7 14l4 7c1.5 0 2.5-1 2.2-2.6L12.5 15H19a2 2 0 0 0 2-2.3l-1.2-7A2 2 0 0 0 17.8 4H7\"/></svg></button></div>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-actions{display:flex;gap:2px} .ds-icon-btn{display:inline-flex;align-items:center;gap:6px;min-width:38px;height:38px;padding:0 10px;border:0;border-radius:8px;background:transparent;color:var(--ink-2);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s} .ds-icon-btn:hover{background:var(--wash);color:var(--ink)} .ds-icon-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-icon-btn.on-up{color:var(--green)} .ds-icon-btn.on-down{color:var(--red)} .ds-icon-btn span{font-size:.8rem;font-weight:700}"
+    },
+    {
+      "name": "Conversation Turn",
+      "kind": "custom",
+      "refersTo": "answer-card",
+      "description": "Signature: the user's question bubble and the pinned answer card with its footer, source tag, actions and the thumbs-down feedback form, on the ruled feed.",
+      "html": "<div class=\"ds-feed\"><div class=\"ds-turn\"><div class=\"ds-q\">How are we tracking against our goals?</div><article class=\"ds-answer\"><span class=\"ds-magnet\"></span><p>Q4 revenue is <strong>82%</strong> of goal with 5 weeks left, on pace.</p><table><tr><th>Goal</th><th>Done</th></tr><tr><td>Q4 revenue</td><td>82%</td></tr></table><footer class=\"ds-foot\"><span class=\"ds-source\">Computed with 3 analyst steps</span><div class=\"ds-actions\"><button class=\"ds-icon-btn\" aria-label=\"Copy answer\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8 8h11v12H8zM5 16V4h11\"/></svg></button><button class=\"ds-icon-btn\" aria-label=\"Helpful\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 10v10H4V10zM7 10l4-7c1.5 0 2.5 1 2.2 2.6L12.5 9H19a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7\"/></svg></button><button class=\"ds-icon-btn on-down\" aria-label=\"Not helpful\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 14V4H4v10zM7 14l4 7c1.5 0 2.5-1 2.2-2.6L12.5 15H19a2 2 0 0 0 2-2.3l-1.2-7A2 2 0 0 0 17.8 4H7\"/></svg></button></div></footer><form class=\"ds-fb\"><label>What was wrong? I will remember the correction.</label><textarea rows=\"2\" placeholder=\"For example: revenue should exclude refunds\"></textarea></form></article></div></div>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-feed{padding:28px;font-family:var(--font);color:var(--ink);background:linear-gradient(transparent 39px,var(--rule) 40px) 0 0/100% 40px,var(--enamel)} .ds-turn{display:flex;flex-direction:column;gap:14px} .ds-q{align-self:flex-end;max-width:85%;padding:12px 16px;border-radius:14px 14px 4px 14px;background:var(--q-bg);color:var(--q-ink);font-weight:600;line-height:1.5} .ds-answer{position:relative;align-self:flex-start;width:100%;max-width:820px;padding:24px 28px 14px;border-radius:8px;background:var(--paper);box-shadow:var(--shadow-card);line-height:1.6} .ds-answer p{margin:0 0 10px} .ds-answer strong{font-weight:800} .ds-answer table{border-collapse:collapse;margin:12px 0;font-size:.92rem} .ds-answer th,.ds-answer td{border:1px solid var(--line-soft);padding:6px 10px;text-align:left;white-space:nowrap} .ds-answer th{background:var(--wash);font-weight:700} .ds-magnet{position:absolute;top:-8px;left:28px;width:16px;height:16px;border-radius:50%;background:var(--magnet);box-shadow:var(--shadow-magnet)} .ds-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px;padding-top:10px;border-top:1px dashed var(--line)} .ds-source{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.78rem;font-weight:600;font-stretch:90%;color:var(--ink-2);background:var(--wash)} .ds-actions{display:flex;gap:2px;margin-left:auto} .ds-icon-btn{display:inline-flex;align-items:center;gap:6px;min-width:38px;height:38px;padding:0 10px;border:0;border-radius:8px;background:transparent;color:var(--ink-2);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s} .ds-icon-btn:hover{background:var(--wash);color:var(--ink)} .ds-icon-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-icon-btn.on-up{color:var(--green)} .ds-icon-btn.on-down{color:var(--red)} .ds-icon-btn span{font-size:.8rem;font-weight:700} .ds-fb{display:grid;gap:10px;margin-top:12px} .ds-fb label{font-weight:700;font-size:.92rem} .ds-fb textarea{font:inherit;font-weight:500;min-height:64px;resize:vertical;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--enamel);color:var(--ink);transition:border-color .15s,background .15s} .ds-fb textarea:focus{outline:none;border-color:var(--blue);background:var(--paper)}"
+    },
+    {
+      "name": "Composer",
+      "kind": "input",
+      "refersTo": "composer-input",
+      "description": "Frame-light composer: an auto-growing paper textarea (50 to 180px), the Ask button, and a keyboard hint that hides on phones.",
+      "html": "<form class=\"ds-composer\"><div class=\"ds-box\"><textarea rows=\"1\" placeholder=\"Ask a question, or teach me about your business\" aria-label=\"Your question\"></textarea><button class=\"ds-ask\">Ask</button></div><p class=\"ds-hint\">Enter to send. Shift and Enter for a new line.</p></form>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-composer{padding:12px 20px 10px;background:var(--alu-hi);border-top:1px solid var(--alu);font-family:var(--font)} .ds-box{display:flex;gap:10px;align-items:flex-end} .ds-box textarea{flex:1;resize:none;min-height:50px;max-height:180px;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-weight:500;line-height:1.5} .ds-box textarea::placeholder{color:var(--ink-3)} .ds-box textarea:focus{outline:none;border-color:var(--blue)} .ds-ask{height:50px;padding:0 18px;border-radius:10px;border:2px solid transparent;font:inherit;font-weight:700;font-stretch:105%;background:var(--action);color:var(--on-action);box-shadow:0 6px 14px -6px var(--action-shadow);cursor:pointer;transition:background .18s} .ds-ask:hover{background:var(--action-hover)} .ds-ask:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-hint{margin:6px 0 0;font-size:.78rem;color:var(--ink-3)}"
+    },
+    {
+      "name": "Top Bar",
+      "kind": "nav",
+      "refersTo": "topbar",
+      "description": "Sticky wall-grey bar: ink wordmark left, text links, theme toggle and outline Sign in right.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-word\" href=\"#\">Analyst Buddy</a><div class=\"ds-links\"><a href=\"#\">How it works</a><a href=\"#\">Request access</a><button class=\"ds-toggle\" aria-label=\"Switch to dark mode\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z\"/></svg></button><button class=\"ds-signin\">Sign in</button></div></nav>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;background:var(--enamel-shade);border-bottom:1px solid var(--line-soft);font-family:var(--font)} .ds-word{font-weight:800;font-stretch:110%;font-size:1.12rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none} .ds-links{display:flex;align-items:center;gap:24px;font-weight:600} .ds-links a{color:var(--ink-2);text-decoration:none} .ds-links a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px} .ds-word:focus-visible,.ds-links a:focus-visible,.ds-signin:focus-visible,.ds-toggle:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-signin{font:inherit;font-weight:700;padding:9px 16px;border-radius:10px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer} .ds-signin:hover{background:var(--ink);color:var(--paper)} .ds-toggle{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;border:2px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;transition:border-color .15s} .ds-toggle:hover{border-color:var(--ink)}"
+    },
+    {
+      "name": "Magnet Card",
+      "kind": "card",
+      "refersTo": "magnet-card",
+      "description": "White paper card pinned to the enamel with a yellow magnet, slightly tilted.",
+      "html": "<div class=\"ds-board\"><div class=\"ds-card\"><span class=\"ds-magnet\"></span><h3>Get your own board</h3><p>Early access for owners who want answers, not dashboards.</p></div></div>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-board{padding:36px 28px;background:linear-gradient(transparent 39px,var(--rule) 40px) 0 0/100% 40px,var(--enamel);border-radius:8px} .ds-card{position:relative;max-width:340px;padding:30px 26px 26px;border-radius:14px;background:var(--paper);box-shadow:var(--shadow-card);transform:rotate(1.2deg);font-family:var(--font);color:var(--ink);transition:transform .2s cubic-bezier(.2,.8,.2,1)} .ds-card:hover{transform:translateY(-3px) rotate(0deg)} .ds-card h3{margin:0 0 8px;font-size:1.6rem;font-weight:800;font-stretch:108%;letter-spacing:-.025em;line-height:1.05} .ds-card p{margin:0;color:var(--ink-2);line-height:1.5} .ds-magnet{position:absolute;top:-11px;left:50%;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:var(--magnet);box-shadow:var(--shadow-magnet)}"
+    },
+    {
+      "name": "Framed Board with Hero Figure",
+      "kind": "custom",
+      "refersTo": "board-frame",
+      "description": "Signature: frame, ruled enamel, a marker figure, a ranked note with its source.",
+      "html": "<div class=\"ds-frame\"><div class=\"ds-ruled\"><div class=\"ds-fig\">-12%</div><div class=\"ds-note\"><span class=\"ds-rank\">1</span><span><b>Pro Plan sales in the South region stopped 3 weeks ago</b><small>orders.csv, 312 rows</small></span></div></div></div>",
+      "css": ":host{--enamel:#fcfdfd;--enamel-shade:#e4e8eb;--paper:#fdfdfc;--ink:#1b1e23;--ink-2:#474d57;--ink-3:#646a74;--blue:#1f4fd8;--action:#1f4fd8;--action-hover:#173da9;--on-action:#fff;--action-shadow:rgba(23,61,169,0.65);--red:#d7262e;--green:#128a4b;--green-text:#0c6e3b;--magnet:#ffc93c;--magnet-hover:#fff4d1;--on-magnet:#1b1e23;--alu-hi:#eef0f2;--alu:#c9ced3;--alu-lo:#9aa1a8;--rule:rgba(31,79,216,0.07);--line:#cfd3d8;--line-soft:#dde0e4;--wash:rgba(27,30,35,0.06);--q-bg:#e9eefc;--q-ink:#173da9;--chart-mat:#fff;--font:'Archivo Variable','Archivo',system-ui,sans-serif;--marker:'Permanent Marker','Archivo Variable',sans-serif;--shadow-card:0 2px 3px rgba(27,30,35,0.08),0 14px 28px -12px rgba(27,30,35,0.28);--shadow-frame:0 3px 6px rgba(27,30,35,0.12),0 30px 60px -28px rgba(27,30,35,0.45);--shadow-magnet:0 3px 5px -1px rgba(27,30,35,0.4)} .ds-frame{padding:12px;border-radius:18px;background:var(--alu);box-shadow:var(--shadow-frame)} .ds-ruled{padding:28px;border-radius:8px;background:linear-gradient(transparent 39px,var(--rule) 40px) 0 0/100% 40px,var(--enamel);font-family:var(--font);color:var(--ink)} .ds-fig{font-family:var(--marker);font-size:4.5rem;line-height:1;color:var(--red)} .ds-note{display:flex;gap:12px;margin-top:18px} .ds-rank{flex:none;display:grid;place-items:center;width:32px;height:32px;border:2.5px solid currentColor;border-radius:50%;font-weight:800;color:var(--red)} .ds-note b{display:block;font-size:1.12rem;font-weight:600;line-height:1.35;max-width:34ch} .ds-note small{display:inline-block;margin-top:6px;padding:2px 8px;border-radius:6px;font-size:.78rem;font-weight:600;font-stretch:90%;color:var(--ink-2);background:var(--wash)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Monday Board",
+    "overview": "Every week starts at the board: what the numbers did, why, and who acts. The whole product is staged as a white dry-erase board in an aluminium frame, hung in a pale grey room. Findings are written on it in marker, printouts and cards are pinned to it with yellow magnets, and a marker tray runs along the bottom edge. The landing page (Persuade) shows one real weekly review on that board; the workspace (Operate) is the same board turned into a desk, with a frame-colored rail and composer around a ruled enamel feed.\n\nDensity is moderate and editorial on the landing page, practical in the workspace. The ruled lines on the enamel (one every 40px) are the board's own grid. Color is ink by default: four marker colors, each with one job, and nothing decorative. The one number that matters is written five times larger than everything else, in a marker hand, circled. Every figure carries a small source tag that says what was read and run, because the product's promise is that every number is computed.\n\nThe world has two lights. By day it is the white board in a pale grey room. After hours (dark theme) it is the same board with the lights down: graphite enamel, dark paper cards that sit slightly lighter than the board, brightened marker inks, the same yellow magnets, and no neon glow anywhere. The world refuses the category default: no dark gradient hero, no dashboard screenshot, no row of icon cards. Depth is physical and soft (paper lifted off enamel, a frame lifted off the wall), never glossy and never a hard offset block.",
+    "keyCharacteristics": [
+      "White enamel board with faint blue ruled lines, inside a neutral aluminium-colored frame with a marker tray.",
+      "Four marker inks with strict jobs: ink for text, blue for actions, red for misses, green for hits.",
+      "Yellow magnet discs pin white paper cards and printouts to the board, often at a slight tilt.",
+      "Archivo variable grotesk for all copy, widened on headings; Permanent Marker only for the hero figure and handwritten annotations.",
+      "Soft, layered, offset-free shadows; no gradients except the ruled lines.",
+      "Signature motion: figures and notes write on in marker strokes; changing the sample week erases and rewrites the board.",
+      "Light and dark themes from one token set: the board in daylight and the same board after hours."
+    ],
+    "rules": [
+      {
+        "name": "The Four Inks Rule",
+        "body": "Red marks misses only, green marks hits only, blue marks actions only; everything else is written in ink. If a color would only decorate, it is ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Brightest Board Rule",
+        "body": "The board enamel is the brightest surface in the room. Cards are neutral white paper sitting on it and separate from it by shadow, not by tint. The wall around the board is darker (enamel-shade).",
+        "section": "colors"
+      },
+      {
+        "name": "The After Hours Rule",
+        "body": "The dark-mode form of the Brightest Board Rule. In the dark, elevation reads as lighter: the wall is darkest (enamel-shade), the board is graphite (enamel), and paper sits slightly lighter than the board (paper), still separated by a deeper shadow. Marker inks brighten to stay legible; the magnet stays the same yellow; nothing glows.",
+        "section": "colors"
+      },
+      {
+        "name": "The Magnet Is Not A Color Rule",
+        "body": "Yellow belongs to magnets: pins, the active toggle, selection. It never carries text meaning.",
+        "section": "colors"
+      },
+      {
+        "name": "The Token Only Rule",
+        "body": "Components read color from the tokens above, never from literal hex, so every surface exists in both themes. A new color is a new token with a light and a dark value.",
+        "section": "colors"
+      },
+      {
+        "name": "The Marker Is For Writing Rule",
+        "body": "The marker face is used only for the big hero figure and handwritten annotations. Never set numerals in lists, ranks or steps in the marker face: its \"1\" reads as \")\". Ranked notes and flow numbers are Archivo 800.",
+        "section": "typography"
+      },
+      {
+        "name": "The Wide Heading Rule",
+        "body": "Headings and the wordmark use the wdth axis at 108 to 112%; source tags narrow to 90%. Width is the type's emphasis tool, not color.",
+        "section": "typography"
+      },
+      {
+        "name": "The Soft Offset Rule",
+        "body": "Every shadow has blur. Zero-blur hard offset shadows do not exist in this world.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Tilt Rule",
+        "body": "Pinned paper may tilt slightly (between -0.8deg and 1.2deg) to read as hand-placed; it straightens on hover and on narrow screens.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Aluminium Promise (open by decision)",
+        "body": "The direction promises a brushed aluminium frame and tray and real magnets. The build currently ships a flat solid neutral frame and tray (alu, alu-lo) and flat yellow magnet discs, because no image generation was available. The user chose to keep the aluminium promise: photo-quality raster assets for the frame, the tray and the magnets will be added in a later session, each with its provenance recorded. Until then the flat fills are placeholders, not the target. Imitating metal in CSS (multi-stop gradients, radial highlights, faux sheen) is explicitly rejected; the replacement is real raster material or nothing. This was the one item left open of eight in the finish review (7 of 8 resolved). The raster assets will need an after-hours variant (or a dimming treatment) for the dark theme.",
+        "section": "open"
+      }
+    ],
+    "dos": [
+      "Do write everything in ink unless it is an action (blue), a miss (red) or a hit (green).",
+      "Do put a source tag under every figure and every answer, stating rows read and code run.",
+      "Do keep one oversized marker figure per board and rank the notes beside it most urgent first.",
+      "Do pin paper cards to the enamel with a yellow magnet and the Pinned Paper shadow.",
+      "Do keep the enamel the brightest surface by day, with cards as neutral white paper on it; after hours, keep paper slightly lighter than the board and the wall darkest.",
+      "Do read every color from a token and give every new token a light and a dark value.",
+      "Do put agent chart images on the white chart mat in both themes.",
+      "Do use Icons8 fluent-systems-regular PNGs as CSS masks and keep the \"Icons by Icons8\" credit visible.",
+      "Do honor prefers-reduced-motion by removing the write-on, erase and scribble animations."
+    ],
+    "donts": [
+      "Don't use red, green or blue for decoration, emphasis or branding.",
+      "Don't set numerals in lists, ranks or steps in Permanent Marker; its \"1\" reads as \")\".",
+      "Don't put kickers or eyebrow labels above headings.",
+      "Don't use zero-blur hard offset shadows.",
+      "Don't use gradients anywhere except the board's ruled lines.",
+      "Don't imitate brushed metal in CSS with multi-stop gradients or radial highlights.",
+      "Don't add neon glows or colored shadows to the dark theme.",
+      "Don't use emoji or em dashes in UI copy.",
+      "Don't use a dark gradient hero, a dashboard screenshot, or a row of icon cards."
+    ]
+  }
+}
