@@ -16,12 +16,9 @@ access.
 
 Stack: React + Vite, FastAPI, LangGraph ReAct agent on Gemini, E2B code sandbox, Pinecone memory.
 
-## Deploy to a Hugging Face Space
+## Saved state (Supabase)
 
-```
-pip install huggingface_hub
-python deploy/hf_push.py <your-hf-username>
-```
-
-Reads `HF_TOKEN` (a write token) and the API keys from `.env`, creates the Space and a private dataset that keeps
-accounts and workspaces across restarts, and uploads the code.
+Accounts, workspaces, members, data files and encrypted connections live on disk and are mirrored to a Supabase
+Postgres table (`app_files`) when `STATE_DATABASE_URL` is set: restored at startup, changes saved every 30 seconds.
+This keeps everything across redeploys on hosts with a temporary disk. Copy local state up once with
+`python persist.py push`.
