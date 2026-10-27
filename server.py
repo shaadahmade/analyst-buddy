@@ -11,7 +11,7 @@ import sys
 from urllib.parse import urlparse
 import threading
 import time
-from collections import deque
+from collections import Counter, deque
 from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -32,7 +32,9 @@ from pydantic import BaseModel
 from agent import DATA_SUFFIXES, MAX_LLM_CALLS, SANDBOX_DATA, SANDBOX_IDLE, Stopped, build_agent, preload, start_sandbox
 from team import TeamContext
 from team import answer as ask
+import admin
 import connections
+import research
 import tracing
 import sources
 from connector import SOURCES, run_import
@@ -273,7 +275,9 @@ def end_user_sessions(tenant: Tenant, email: str):
 def session_info(s: Session) -> dict:
     return {"tenant": s.tenant.id, "workspace": s.tenant.name(), "workspaces": workspaces_of(s.user),
             "files": s.files, "knowledge": s.tenant.knowledge(), "user": s.user, "role": s.role,
-            "scoped": s.scope is not None, "permissions": sorted(permissions(s.role, s.scope))}
+            "scoped": s.scope is not None, "permissions": sorted(permissions(s.role, s.scope)),
+            "admin": admin.is_admin(s.user), "web_research": research.enabled(s.tenant),
+            "web_available": research.available()}
 
 
 class Login(BaseModel):
@@ -489,6 +493,7 @@ def ask_route(body: Question, cur=Depends(current)):
             raise HTTPException(409, "Still working on your previous question")
         stop = s.stop = threading.Event()
     finished = threading.Event()
+    started, outputs, tools = time.time(), [], []
 
     def end(event: dict, keep=None) -> bool:
         with ASK_LOCK:
@@ -503,7 +508,20 @@ def ask_route(body: Question, cur=Depends(current)):
         timer.cancel()
         events.put(event)
         events.put(None)
+        measure(event)
         return True
+
+    def measure(event: dict):
+        status = event["type"]
+        if status == "error" and event.get("message", "").startswith(TIMED_OUT[:20]):
+            status = "timeout"
+        found = tracing.checks(event.get("answer") if status == "done" else None, outputs, len(tools))
+        admin.record(s.tenant, user=tracing.owner(s.tenant.id, s.user), role=s.role, mode=body.mode, status=status,
+                     seconds=round(time.time() - started, 1), steps=len(tools), tools=dict(Counter(tools)),
+                     tool_errors=found["tool_errors"], numbers_grounded=found["numbers_grounded"],
+                     placeholder_leak=found["placeholder_leak"],
+                     web_blocked=sum(o.startswith("ERROR: not searched") for o in outputs),
+                     web_learned=event.get("learned", 0), message=event.get("message", "")[:120])
 
     s.cancel = end
     timer = threading.Timer(QUESTION_TIMEOUT, end, args=[{"type": "error", "retry": True,
@@ -514,11 +532,12 @@ def ask_route(body: Question, cur=Depends(current)):
         try:
             before = set(s.charts.glob("chart_*.png"))
             crew = TeamContext(s.tenant, s.data, list(s.files), s.charts) if body.mode == "auto" else None
-            outputs = []
 
             def step(event):
                 if event.get("type") == "output":
                     outputs.append(str(event.get("output", "")))
+                elif event.get("type") == "call":
+                    tools.append(event.get("tool", ""))
                 events.put(event)
 
             with tracing.question(s.tenant.id, s.user, s.role, body.mode, question) as run:
@@ -526,12 +545,14 @@ def ask_route(body: Question, cur=Depends(current)):
                                          should_stop=stop.is_set, images=images, team=crew)
                 tracing.finish(run, answer, outputs, calls)
             s.last_used = time.time()
+            learned = research.learn(s.memory, body.question.strip(), answer, outputs) if answer and not stop.is_set() else 0
             new_charts = sorted(set(s.charts.glob("chart_*.png")) - before, key=lambda p: p.stat().st_mtime)
             end({
                 "type": "done",
                 "answer": answer or f"I hit the limit of {MAX_LLM_CALLS} steps without a final answer. Try a narrower question.",
                 "calls": calls,
                 "trace": str(run.id) if run else None,
+                "learned": learned,
                 "charts": ["data:image/png;base64," + base64.b64encode(p.read_bytes()).decode() for p in new_charts],
             }, keep=new)
         except Stopped:
@@ -1094,6 +1115,28 @@ def delete_data(name: str, cur=Depends(need("upload"))):
         live.agent = build_agent(live.sandbox, live.tenant, live.memory, live.data, chart_dir=live.charts)
     s.tenant.audit(s.user, "data deleted", file=name)
     return session_info(s)
+
+
+class WebSetting(BaseModel):
+    enabled: bool
+
+
+@app.put("/api/settings/web")
+def put_web_setting(body: WebSetting, cur=Depends(need("users"))):
+    s = cur[1]
+    if body.enabled and not research.available():
+        raise HTTPException(400, "Web research needs the Gemini provider and a Google API key on the server")
+    research.set_enabled(s.tenant, body.enabled)
+    s.tenant.audit(s.user, "web research " + ("on" if body.enabled else "off"))
+    rebuild_agents(s.tenant)
+    return session_info(s)
+
+
+@app.get("/api/admin")
+def admin_overview(cur=Depends(current)):
+    if not admin.is_admin(cur[1].user):
+        raise HTTPException(404, "Not found")
+    return admin.overview()
 
 
 @app.get("/api/users")

@@ -16,6 +16,7 @@ import Sheet from './Sheet.jsx'
 import TeamBoard from './TeamBoard.jsx'
 import WorkspaceMenu from './WorkspaceMenu.jsx'
 import Reports from './Reports.jsx'
+import Admin from './Admin.jsx'
 import ThemeToggle from './ThemeToggle.jsx'
 
 const MAX_CIRCLES = 5
@@ -266,6 +267,16 @@ export default function Workspace({ session, setSession, signOut }) {
     }
   }
 
+  async function toggleWeb(e) {
+    try {
+      setSession(await api('/api/settings/web', { method: 'PUT', body: { enabled: e.target.checked } }))
+      setUploadMsg('')
+    } catch (err) {
+      if (err.status === 401) return signOut(err.message)
+      setUploadMsg(err.message)
+    }
+  }
+
   async function deleteFile(name) {
     if (!window.confirm(`Delete ${name}? The analyst stops using it right away. A saved connection that made it can bring it back on its next sync.`)) return
     try {
@@ -345,6 +356,17 @@ export default function Workspace({ session, setSession, signOut }) {
             {session.scoped && <p className="rail-empty">You see the part of the company data your admin shared with you.</p>}
             {uploadMsg && <p className="rail-empty" role="status">{uploadMsg}</p>}
           </section>
+
+          {can('users') && session.web_available && (
+            <section aria-labelledby="web-h" className="rail-note">
+              <h2 id="web-h" className="rail-h">Web research</h2>
+              <label className="check">
+                <input type="checkbox" checked={session.web_research} onChange={toggleWeb} />
+                Look up benchmarks on the web
+              </label>
+              <p className="rail-empty">Searches send only the general topic, never your numbers, names or customers. Answers link every web source.</p>
+            </section>
+          )}
         </details>
 
         <p className="rail-user"><Icon name="user" size={16} /><span>{session.user}</span><span className={`role-chip role-${session.role}`}>{session.role}</span></p>
@@ -358,11 +380,12 @@ export default function Workspace({ session, setSession, signOut }) {
             {can('reports') && <button role="tab" aria-selected={tab === 'reports'} className={tab === 'reports' ? 'on' : ''} onClick={() => setTab('reports')}>Weekly reports</button>}
             {can('users') && <button role="tab" aria-selected={tab === 'members'} className={tab === 'members' ? 'on' : ''} onClick={() => setTab('members')}>Members</button>}
             <button role="tab" aria-selected={tab === 'mcp'} className={tab === 'mcp' ? 'on' : ''} onClick={() => setTab('mcp')}>Connect AI</button>
+            {session.admin && <button role="tab" aria-selected={tab === 'admin'} className={tab === 'admin' ? 'on' : ''} onClick={() => setTab('admin')}>Admin</button>}
           </div>
           <span className="status"><i />Sandbox ready</span>
         </header>
 
-        {tab === 'mcp' ? <McpAccess session={session} onAuthError={signOut} /> : tab === 'members' ? <Members me={session} onAuthError={signOut} /> : tab === 'reports' ? <Reports canManage={can('reports.manage')} onAuthError={signOut} /> : <>
+        {tab === 'admin' && session.admin ? <Admin onAuthError={signOut} /> : tab === 'mcp' ? <McpAccess session={session} onAuthError={signOut} /> : tab === 'members' ? <Members me={session} onAuthError={signOut} /> : tab === 'reports' ? <Reports canManage={can('reports.manage')} onAuthError={signOut} /> : <>
         <div className="ws-board" ref={boardRef} onPointerMove={trackPointer}>
         <div className={`feed ${marking ? 'is-marking' : ''} ${hand.current ? 'pen-in-hand' : ''}`} ref={feedRef} aria-live="polite">
           <InkLayer ref={inkRef} feedRef={feedRef} saved={strokes.current} keep={keepStrokes} tool={marking} height={layerHeight}

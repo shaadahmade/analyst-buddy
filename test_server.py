@@ -442,6 +442,30 @@ try:
     assert joined["tenant"] == "test-a" and joined["role"] == "viewer"
     os.environ.pop("GOOGLE_CLIENT_ID")
 
+    fresh = login("test-a", "boss@test-a.in", "test-a-password").json()
+    hf = {"Authorization": f"Bearer {fresh['token']}"}
+    assert fresh["admin"] is False and fresh["web_research"] is False
+    assert client.get("/api/admin", headers=hf).status_code == 404, "the admin panel must stay hidden from non-admins"
+    os.environ["ADMIN_EMAILS"] = "ops@x.in, BOSS@test-a.in"
+    r = client.get("/api/admin", headers=hf)
+    assert r.status_code == 200 and "week" in r.json(), r.text
+    assert not any(w["id"].startswith("test-") for w in r.json()["workspaces"])
+    assert client.get("/api/me", headers=hf).json()["admin"] is True
+    os.environ.pop("ADMIN_EMAILS")
+    rows = [json.loads(line) for line in (TENANTS_DIR / "test-a" / "metrics.jsonl").read_text().splitlines()]
+    assert any(r["status"] == "done" and r["tools"] == {"run_python": 1} and r["steps"] == 1 for r in rows), rows[:3]
+    assert {"stopped", "error"} <= {r["status"] for r in rows}, {r["status"] for r in rows}
+    assert "@" not in json.dumps(rows), "metrics must not store who asked in plain text"
+
+    available = server.research.available
+    server.research.available = lambda: False
+    assert client.put("/api/settings/web", json={"enabled": True}, headers=hf).status_code == 400
+    server.research.available = lambda: True
+    assert client.put("/api/settings/web", json={"enabled": True}, headers=hf).json()["web_research"] is True
+    assert client.put("/api/settings/web", json={"enabled": False}, headers={"Authorization": f"Bearer {joined['token']}"}).status_code == 403
+    assert client.put("/api/settings/web", json={"enabled": False}, headers=hf).json()["web_research"] is False
+    server.research.available = available
+
     server._hits.clear()
     server.LOGIN_LIMIT = (3, 600)
     codes = [login("test-a", "boss@test-a.in", "wrong").status_code for _ in range(4)]
